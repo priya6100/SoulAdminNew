@@ -1,0 +1,110 @@
+body{
+background-color: #f8f9fa;
+}
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #cb8364;
+    color: white;
+    padding-top: 60px;
+ 
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+}
+
+.sidebar a{
+    display: block;
+}
+
+
+
+.sidebar ul {
+    margin : 0;
+    padding: 0;
+}
+
+.sidebar ul li{
+    list-style: none;
+}
+
+.sidebar ul li a{
+    display: block;
+    color: white;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    margin: 15px 0px 5px 10px;
+    text-decoration: none;
+    font-weight: 900;
+}
+.sidebar ul li span{
+ font-size: 20px;
+}
+
+.sidebar ul li a.active{
+    background: white;
+    color: #cb8364;
+    border-radius: 5px;
+}
+.userInfo{
+    text-align: center;
+    display: flex;
+    /* flex-direction: column; */
+    margin: 10px;
+  
+}
+.userIcon{
+    font-size: 50px;
+}
+.userTextL h5{
+    text-align: left;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-top: 27px;
+}
+.userTextL h5 span{
+    text-align: left;
+    font-size: 12px;
+    text-transform: lowercase;
+    font-weight: 200;
+  padding-top: 25px ;
+  line-height: 2;
+  color: rgba(255, 255, 255, 0.8);
+}
+.userTextL h6{
+    text-align: center;
+    font-size: 12px;
+    
+    font-weight: 200;
+}
+.userBtn {
+    margin-right: 10px;
+}
+.userBtn button{
+    border: none;
+    background-color: green;
+    color: white;
+    width: 100%;
+    /* margin: 5px; */
+    padding: 10px 10px;
+    margin-left: 10px;
+ 
+    border-radius: 5px;
+    transition: 1s;
+}
+.userBtn button:hover{
+    border: none;
+    background-color: white;
+    color: #cb8364;
+    width: 100%;
+    /* margin: 5px; */
+    padding: 10px 10px;
+    margin-left: 10px;
+ 
+    border-radius: 5px;
+}
+
+hr{
+    background-color: wheat;
+}
