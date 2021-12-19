@@ -1,7 +1,4 @@
-const baseUrl =
-location.hostname === "localhost"
-  ? "http://localhost:2000"
-  : "https://soulbackend.herokuapp.com";
+const baseUrl ="https://soulbackend.herokuapp.com";
 
 
 
