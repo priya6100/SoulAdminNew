@@ -1,34 +1,35 @@
-import { userConstants } from "../actions/constants"
+/** @format */
 
-const initState ={
-    error: null,
-    message: '',
-    loading: false
-}
+import { userConstants } from "../actions/constants";
 
-export default (state = initState, action) =>{
+const initState = {
+  error: null,
+  message: "",
+  loading: false,
+};
 
-    switch(action.type){
-        case userConstants.USER_REGISTER_REQUEST:
-            state={
-                ...state,
-                loading: true
-            }
-            break;
-            case userConstants.USER_REGISTER_SUCCESS:
-                state={
-                    ...state,
-                    loading: false,
-                    message: action.payload.message
-                }
-                break;
-                case userConstants.USER_REGISTER_FAILURE:
-                    state={
-                        ...state,
-                        loading: false,
-                        error: action.payload.error
-                    }
-                    break;
-    }
-    return state;
-}
+export default (state = initState, action) => {
+  switch (action.type) {
+    case userConstants.USER_REGISTER_REQUEST:
+      state = {
+        ...state,
+        loading: true,
+      };
+      break;
+    case userConstants.USER_REGISTER_SUCCESS:
+      state = {
+        ...state,
+        message: action.payload.message,
+        loading: false,
+      };
+      break;
+    case userConstants.USER_REGISTER_FAILURE:
+      state = {
+        ...state,
+        loading: false,
+        error: action.payload.error,
+      };
+      break;
+  }
+  return state;
+};

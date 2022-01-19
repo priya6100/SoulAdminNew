@@ -1,40 +1,38 @@
-import { categoryConstants, initialDtataConstants, orderConstants, productConstants } from "./constants";
+/** @format */
+
+import {
+  categoryConstants,
+  initialDtataConstants,
+  orderConstants,
+  productConstants,
+} from "./constants";
 import axios from "../helpers/axios";
 
+export const getInitialData = () => {
+  return async (dispatch) => {
+    const res = await axios.post(`/initialData`);
 
+    if (res.status === 200) {
+      const { categories, products, orders } = res.data;
 
-export const getInitialData = () =>{
+      console.log(products, "test Product");
 
-    return async dispatch => {
-     
-        const res = await axios.post(`/initialData`);
+      dispatch({
+        type: categoryConstants.GET_ALL_CATEGORIES_SUCCESS,
+        payload: { categories },
+      });
 
-        if(res.status === 200){
+      dispatch({
+        type: productConstants.GET_ALL_PRODUCTS_SUCCESS,
+        payload: { products },
+      });
 
-            const {categories, products, orders} = res.data;
-
-            dispatch({
-                type: categoryConstants.GET_ALL_CATEGORIES_SUCCESS,
-                payload: { categories }
-            });
-
-            dispatch({
-                
-                type: productConstants.GET_ALL_PRODUCTS_SUCCESS,
-                payload: { products }
-
-            });
-
-            dispatch({
-                
-                type: orderConstants.GET_CUSTOMER_ORDER_SUCCESS,
-                payload: { orders }
-
-            });
-
-        }
-
-        console.log(res);
+      dispatch({
+        type: orderConstants.GET_CUSTOMER_ORDER_SUCCESS,
+        payload: { orders },
+      });
     }
 
-}
+    console.log(res);
+  };
+};

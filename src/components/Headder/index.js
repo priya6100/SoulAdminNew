@@ -1,10 +1,17 @@
+/** @format */
+
 import React from "react";
 import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, Link } from "react-router-dom";
 import { signout } from "../../actions";
-import './style.css';
-import { IoIosLogIn, IoIosLogOut, IoIosPerson, IoIosPower } from "react-icons/io";
+import "./style.css";
+import {
+  IoIosLogIn,
+  IoIosLogOut,
+  IoIosPerson,
+  IoIosPower,
+} from "react-icons/io";
 /**
  * @author
  * @function Header
@@ -22,18 +29,8 @@ const Header = (props) => {
       <Nav>
         <li className="nav-item">
           <span className="nav-link" onClick={logout}>
-           <IoIosPower /> 
+            <IoIosPower />
           </span>
-        </li>
-        <li className="nav-item">
-          <NavLink to ="/admin/signin" className="nav-link">
-            <IoIosLogIn /> Admin Signin
-          </NavLink>
-        </li>
-        <li className="nav-item">
-          <NavLink to ="/admin/signup" className="nav-link">
-            <IoIosPerson /> Admin Signup
-          </NavLink>
         </li>
       </Nav>
     );
@@ -46,12 +43,12 @@ const Header = (props) => {
 
         <li className="nav-item">
           <NavLink to="/signin" className="nav-link">
-          <IoIosLogIn /> Signin
+            <IoIosLogIn /> Signin
           </NavLink>
         </li>
         <li className="nav-item">
           <NavLink to="/signup" className="nav-link">
-          <IoIosPerson /> Signup
+            <IoIosPerson /> Signup
           </NavLink>
         </li>
       </Nav>
@@ -60,14 +57,12 @@ const Header = (props) => {
 
   return (
     <Navbar
-
       fixed="top"
       collapseOnSelect
       expand="lg"
       bg="dark"
       variant="dark"
-      style={{ zIndex: 1 }}
-    >
+      style={{ zIndex: 1 }}>
       <Container fluid>
         {/* <Navbar.Brand href="#home">Admin Dashboard</Navbar.Brand> */}
         <Link to="/" className="navbar-brand">

@@ -1,21 +1,24 @@
-import React from 'react';
-import { Redirect, Route } from 'react-router-dom';
+/** @format */
 
+import React from "react";
+import { Redirect, Route } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
-const PrivateRoute = ({component:Component, ...rest}) =>{
+const PrivateRoute = ({ component: Component, ...rest }) => {
+  return (
+    <Route
+      {...rest}
+      component={(props) => {
+        const token = window.localStorage.getItem("token");
 
-    return <Route {...rest} component={(props) =>{
-
-        const token = window.localStorage.getItem('token');
-
-        if(token){
-               return <Component {...props} />
-        }else{
-           
-            return <Redirect to={`/signin`} />
+        if (token) {
+          return <Component {...props} />;
+        } else {
+          return <Redirect to={`/signin`} />;
         }
-
-    }} />
-}
+      }}
+    />
+  );
+};
 
 export default PrivateRoute;
