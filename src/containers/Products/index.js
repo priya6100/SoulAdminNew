@@ -10,7 +10,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Form } from "react-bootstrap";
 import {
   addProduct,
-  deleteProductById,
+  deleteProductById, 
   getInitialData,
   getProducts,
 } from "../../actions";
@@ -136,7 +136,7 @@ const Products = (props) => {
     } else if (sizeXXLquantity === "") {
       alert("quantity of XXL size is required");
       return;
-    } else if (sizeXXXLquantity === "") {
+     } else if (sizeXXXLquantity === "") {
       alert("quantity of XXXL size is required");
       return;
     }
